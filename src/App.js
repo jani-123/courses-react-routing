@@ -12,7 +12,7 @@ import {
 	Redirect
 } from 'react-router-dom'
 
-const Home = () => (
+const Home = (props) => (
 	<div className="main-content home">
 		<h2>Front End Course Directory</h2>
 		<p>This fun directory is a project for the <em>React Router Basics</em> course on Treehouse.</p>
@@ -121,11 +121,6 @@ const Courses = () => {
 		</div>
 	);
 }
-const NotFoundPage = (props) => {
-	return (
-		<div> <h2> Error 404! </h2> </div>
-	);
-}
 
 const App = () => (
 	<BrowserRouter>
@@ -146,7 +141,7 @@ const App = () => (
 				<Route path="/about" component={About} />
 				<Route path="/teachers" component={Teachers} />
 				<Route path="/courses" component={Courses} />
-				<Route component={NotFoundPage} />
+				<Route component={Home} />
 			</Switch>
 		</div>
 	</BrowserRouter>
